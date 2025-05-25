@@ -1,7 +1,35 @@
 import React from 'react';
 import { Check, Award, Users, Gift } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const Partnership: React.FC = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6
+      }
+    }
+  };
+
   const partnerBenefits = [
     {
       title: "Role Ekslusif",
@@ -60,67 +88,116 @@ const Partnership: React.FC = () => {
   ];
 
   return (
-    <section id="partnership" className="py-16 md:py-24 bg-white dark:bg-gray-900">
+    <section ref={ref} id="partnership" className="py-16 md:py-24 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Partnership & Supporter Program</h2>
-          <div className="w-20 h-1.5 bg-indigo-600 mx-auto mb-8 rounded-full"></div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Partnership & Supporter Program
+          </h2>
+          <motion.div
+            initial={{ width: 0 }}
+            animate={inView ? { width: "5rem" } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="w-20 h-1.5 bg-indigo-600 mx-auto mb-8 rounded-full"
+          />
           <p className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-300">
             Bergabunglah dengan program kemitraan kami untuk tumbuh bersama dan mendapatkan manfaat eksklusif bagi Anda dan komunitas Anda.
           </p>
-        </div>
+        </motion.div>
 
         <div className="relative mb-20">
           <div className="absolute inset-0 flex justify-center">
-            <div className="h-full w-1 bg-indigo-100 dark:bg-indigo-900"></div>
+            <motion.div
+              initial={{ height: 0 }}
+              animate={inView ? { height: "100%" } : {}}
+              transition={{ duration: 1 }}
+              className="w-1 bg-indigo-100 dark:bg-indigo-900"
+            />
           </div>
-          <div className="relative grid gap-8 md:grid-cols-3">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            className="relative grid gap-8 md:grid-cols-3"
+          >
             {steps.map((step, index) => (
-              <div key={index} className="relative bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-indigo-100 dark:border-indigo-900">
-                <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-indigo-500 rounded-full w-10 h-10 flex items-center justify-center text-white font-bold">
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                className="relative bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-indigo-100 dark:border-indigo-900"
+              >
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: index * 0.2 }}
+                  className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-indigo-500 rounded-full w-10 h-10 flex items-center justify-center text-white font-bold"
+                >
                   {index + 1}
-                </div>
+                </motion.div>
                 <div className="pt-6">
-                  <div className="flex justify-center mb-4">
+                  <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: index * 0.3 }}
+                    className="flex justify-center mb-4"
+                  >
                     <div className="p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-full">
                       {step.icon}
                     </div>
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 text-center">{step.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-center">{step.description}</p>
+                  </motion.div>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 text-center">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-center">
+                    {step.description}
+                  </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
-        <div className="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 mb-10">
-          <h3 className="text-2xl font-bold text-center text-indigo-800 dark:text-indigo-300 mb-8">Benefit yang didapat antara Supporter dan Partner</h3>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 mb-10"
+        >
+          <h3 className="text-2xl font-bold text-center text-indigo-800 dark:text-indigo-300 mb-8">
+            Benefit yang didapat antara Supporter dan Partner
+          </h3>
           
-          <div className="grid grid-cols-3 gap-4 mb-6">
-            <div className="col-span-1"></div>
-            <div className="col-span-1 text-center">
-              <div className="bg-indigo-100 dark:bg-indigo-900/50 text-indigo-800 dark:text-indigo-300 py-2 px-4 rounded-t-lg font-semibold">
-                Supporter
-              </div>
-            </div>
-            <div className="col-span-1 text-center">
-              <div className="bg-indigo-600 text-white py-2 px-4 rounded-t-lg font-semibold">
-                Partner
-              </div>
-            </div>
-          </div>
-          
-          <div className="space-y-4">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            className="space-y-4"
+          >
             {partnerBenefits.map((benefit, index) => (
-              <div key={index} className="grid grid-cols-3 gap-4 items-center bg-white dark:bg-gray-800 rounded-lg p-4">
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                whileHover={{ scale: 1.02 }}
+                className="grid grid-cols-3 gap-4 items-center bg-white dark:bg-gray-800 rounded-lg p-4"
+              >
                 <div className="col-span-1">
                   <p className="font-medium text-gray-800 dark:text-white">{benefit.title}</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400">{benefit.description}</p>
                 </div>
                 <div className="col-span-1 text-center">
                   {benefit.supporter ? (
-                    <Check className="mx-auto h-6 w-6 text-green-500" />
+                    <motion.div
+                      whileHover={{ scale: 1.2 }}
+                      className="flex justify-center"
+                    >
+                      <Check className="h-6 w-6 text-green-500" />
+                    </motion.div>
                   ) : (
                     <div className="h-6 flex items-center justify-center">
                       <span className="block w-4 h-0.5 bg-gray-300 dark:bg-gray-600 rounded"></span>
@@ -129,26 +206,38 @@ const Partnership: React.FC = () => {
                 </div>
                 <div className="col-span-1 text-center">
                   {benefit.partner ? (
-                    <Check className="mx-auto h-6 w-6 text-green-500" />
+                    <motion.div
+                      whileHover={{ scale: 1.2 }}
+                      className="flex justify-center"
+                    >
+                      <Check className="h-6 w-6 text-green-500" />
+                    </motion.div>
                   ) : (
                     <div className="h-6 flex items-center justify-center">
                       <span className="block w-4 h-0.5 bg-gray-300 dark:bg-gray-600 rounded"></span>
                     </div>
                   )}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="text-center">
-          <a 
-            href="https://forms.gle/7Zhwg7WpSAEgP8xP7" 
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center"
+        >
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href="https://forms.gle/7Zhwg7WpSAEgP8xP7"
             className="inline-block bg-indigo-600 text-white hover:bg-indigo-700 px-6 py-3 rounded-lg transition-colors duration-200"
           >
             Ajukan Permohonan Kerjasama
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );

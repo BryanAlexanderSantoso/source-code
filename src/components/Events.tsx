@@ -1,7 +1,35 @@
 import React from 'react';
 import { Calendar, Gift, Trophy, Film } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const Events: React.FC = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6
+      }
+    }
+  };
+
   const giveaways = [
     {
       title: "Discord Nitro Giveaway",
@@ -101,27 +129,57 @@ const Events: React.FC = () => {
   ];
 
   return (
-    <section id="events" className="py-16 md:py-24 bg-gradient-to-b from-indigo-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
+    <section ref={ref} id="events" className="py-16 md:py-24 bg-gradient-to-b from-indigo-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Events & Giveaways</h2>
-          <div className="w-20 h-1.5 bg-indigo-600 mx-auto mb-8 rounded-full"></div>
+          <motion.div
+            initial={{ width: 0 }}
+            animate={inView ? { width: "5rem" } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="w-20 h-1.5 bg-indigo-600 mx-auto mb-8 rounded-full"
+          />
           <p className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-300">
             Kami menyelenggarakan acara rutin dan memberikan hadiah menarik untuk menjaga komunitas kami tetap menarik dan bermanfaat.
           </p>
-        </div>
+        </motion.div>
 
-        <h3 className="text-2xl font-bold text-indigo-800 dark:text-indigo-300 mb-6">Giveaway</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <motion.h3
+          initial={{ opacity: 0, x: -20 }}
+          animate={inView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-2xl font-bold text-indigo-800 dark:text-indigo-300 mb-6"
+        >
+          Giveaway
+        </motion.h3>
+        
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
+        >
           {giveaways.map((giveaway, index) => (
-            <div 
-              key={index} 
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
               className={`rounded-xl border p-6 transition-all duration-300 hover:shadow-md ${giveaway.style}`}
             >
               <div className="flex justify-between items-start mb-4">
-                <div className="p-3 bg-white dark:bg-gray-800 rounded-full shadow-sm">
+                <motion.div
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="p-3 bg-white dark:bg-gray-800 rounded-full shadow-sm"
+                >
                   {giveaway.icon}
-                </div>
+                </motion.div>
               </div>
               <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{giveaway.title}</h4>
               <p className="text-gray-600 dark:text-gray-300 mb-4">{giveaway.description}</p>
@@ -129,47 +187,87 @@ const Events: React.FC = () => {
                 <span className="text-sm font-medium bg-white dark:bg-gray-800 px-3 py-1 rounded-full dark:text-gray-300">
                   Prize: {giveaway.prize}
                 </span>
-                <a 
-                  href="https://discord.gg/kazeindo" 
-                  target="_blank" 
+                <motion.a
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  href="https://discord.gg/kazeindo"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 text-sm font-medium"
                 >
                   Enter Now
-                </a>
+                </motion.a>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <h3 className="text-2xl font-bold text-indigo-800 dark:text-indigo-300 mb-6">Regular Events</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <motion.h3
+          initial={{ opacity: 0, x: -20 }}
+          animate={inView ?  { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-2xl font-bold text-indigo-800 dark:text-indigo-300 mb-6"
+        >
+          Regular Events
+        </motion.h3>
+        
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
+        >
           {events.map((event, index) => (
-            <div 
-              key={index} 
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
               className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 transition-all duration-300 hover:shadow-md"
             >
-              <div className="flex justify-center mb-4">
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: index * 0.2 }}
+                className="flex justify-center mb-4"
+              >
                 <div className="p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-full">
                   {event.icon}
                 </div>
-              </div>
+              </motion.div>
               <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 text-center">{event.title}</h4>
               <p className="text-gray-600 dark:text-gray-300 text-center mb-4">{event.description}</p>
               <p className="text-indigo-600 dark:text-indigo-400 font-medium text-center">{event.date}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm p-8 mb-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm p-8 mb-10"
+        >
           <h3 className="text-2xl font-bold text-center text-indigo-800 dark:text-indigo-300 mb-8">Staff-Staff Kami</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          >
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="flex space-x-4">
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                whileHover={{ scale: 1.02 }}
+                className="flex space-x-4"
+              >
                 <div className="flex-shrink-0">
-                  <img 
-                    src={testimonial.avatar} 
-                    alt={testimonial.name} 
+                  <motion.img
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: index * 0.1 }}
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
                     className="w-12 h-12 rounded-full object-cover"
                   />
                 </div>
@@ -177,24 +275,31 @@ const Events: React.FC = () => {
                   <blockquote className="text-gray-600 dark:text-gray-300 italic mb-2">"{testimonial.quote}"</blockquote>
                   <p className="font-medium text-indigo-600 dark:text-indigo-400">- {testimonial.name}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <div className="text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center"
+        >
           <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
             Jangan lewatkan acara dan hadiah menarik ini!
           </p>
-          <a 
-            href="https://discord.gg/kazeindo" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            href="https://discord.gg/kazeindo"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-indigo-600 text-white hover:bg-indigo-700 px-6 py-3 rounded-lg transition-colors duration-200"
           >
             Join Our Discord
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );
