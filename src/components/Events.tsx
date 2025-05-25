@@ -49,9 +49,9 @@ const Events: React.FC = () => {
 
   const testimonials = [
     {
-      quote: "Kami membangun komunitas yang positif dan suportif di sini. Sangat menyenangkan!",
+      quote: "Cobalah untuk fokus terhadap mimpi mu sendiri. Nothing to lose, or nothing to be. (you're on your own).",
       name: "Near_Developer Website Server & Owner Server",
-      avatar: "https://cdn.discordapp.com/avatars/1332216518393593868/ed687cb5b87ab462bb54ad5a10cb3c54.png?size=4096"
+      avatar: "https://tenor.com/view/teq-ultimate-gohan-teen-gohan-adult-gohan-dragon-ball-dragon-ball-z-gif-10877208784244583300.gif"
     },
     {
       quote: "Kami membangun komunitas yang positif dan suportif di sini. Sangat menyenangkan!",
@@ -66,7 +66,7 @@ const Events: React.FC = () => {
     {
       quote: "you don't have to search for love outside, because you already have it inside you",
       name: "Bryan_Developer Website Server & Staff Server ",
-      avatar: "https://cdn.discordapp.com/attachments/1363370386531680366/1376033189935579206/Jepretan_Layar_2025-05-25_pukul_10.04.03_AM.png?ex=6833da45&is=683288c5&hm=b1801ceab492e2d58a82a72e891d6b5a86ed06c3618ca9ed2905923c7de454ac&"
+      avatar: "https://media1.tenor.com/m/mDnIiloFauUAAAAd/fujii-kaze-matsuri.gif"
     },
     {
       quote: "Kalau memang boleh mencintai, kenapa harus aku yang terjatuh terlalu dalam.",
@@ -91,7 +91,7 @@ const Events: React.FC = () => {
     {
       quote: "Jika mata adalah cahaya, Maka hati adalah permata, Jika senyum adalah ibadah, Maka mengenalmu adalah anugerah",
       name: "Haru_Staff Server",
-      avatar: "https://cdn.discordapp.com/attachments/1363370386531680366/1363485728608092330/IMG-20250408-WA0031.jpg?ex=6833b04a&is=68325eca&hm=313ca4fb400231c1dbaa31117be4a79eb0cd986d28638e2b04c31fe9ad73bac1&"
+      avatar: "https://media1.tenor.com/m/r-bKDCFZ_w4AAAAd/leon-kennedy-resident-evil-4.gif"
     },
     {
       quote: "If loving you is a sin, Then I'll gladly become a sinner. Jiee, My beloved",
