@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <a href="#" className="flex items-center">
-              <img src="https://i.pinimg.com/736x/1d/25/5f/1d255f5302a9ea2702916124601dd053.jpg" alt="Kaze Serenity Logo" className="h-10 w-10" />
+              <img src="https://cdn.discordapp.com/attachments/1363370386531680366/1376056097617612820/Untitled_Project__28_-removebg-preview.png?ex=6833ef9b&is=68329e1b&hm=f073298b23b9db727b48747cdd1816f64198ce7d25420887f9451ca4aecd74de&" alt="Kaze Serenity Logo" className="h-10 w-10" />
               <span className={`ml-2 text-xl font-bold ${textColor}`}>
                 Kaze Serenity
               </span>

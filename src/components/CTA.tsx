@@ -24,7 +24,7 @@ const CTA: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
-          <img src="https://i.pinimg.com/736x/1d/25/5f/1d255f5302a9ea2702916124601dd053.jpg" alt="Kaze Serenity Logo" className="h-16 w-16 text-indigo-300 mx-auto mb-6" />
+          <img src="https://cdn.discordapp.com/attachments/1363370386531680366/1376056097617612820/Untitled_Project__28_-removebg-preview.png?ex=6833ef9b&is=68329e1b&hm=f073298b23b9db727b48747cdd1816f64198ce7d25420887f9451ca4aecd74de&" alt="Kaze Serenity Logo" className="h-16 w-16 text-indigo-300 mx-auto mb-6" />
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Bergabunglah dengan Kami & Jalani Ketenangan.</h2>
           <p className="max-w-2xl mx-auto text-xl text-indigo-200 mb-10">
             Jadilah bagian dari komunitas yang berkembang di mana persahabatan terbentuk, kreativitas berkembang, dan getaran positif berlimpah.
@@ -34,7 +34,7 @@ const CTA: React.FC = () => {
           <div className="max-w-lg mx-auto bg-[#36393f] rounded-lg overflow-hidden shadow-xl mb-10">
             <div className="bg-[#2f3136] p-4 flex items-center">
               <div className="w-12 h-12 rounded-full bg-indigo-600 flex items-center justify-center mr-4">
-                <img src='https://i.pinimg.com/736x/1d/25/5f/1d255f5302a9ea2702916124601dd053.jpg' className="h-6 w-6 text-white" />
+                <img src='https://cdn.discordapp.com/attachments/1363370386531680366/1376056097617612820/Untitled_Project__28_-removebg-preview.png?ex=6833ef9b&is=68329e1b&hm=f073298b23b9db727b48747cdd1816f64198ce7d25420887f9451ca4aecd74de&' className="h-6 w-6 text-white" />
               </div>
               <div className="text-left">
                 <h3 className="text-white font-semibold">Kaze Serenity</h3>
