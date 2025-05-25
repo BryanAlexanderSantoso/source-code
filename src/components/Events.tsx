@@ -91,7 +91,7 @@ const Events: React.FC = () => {
     {
       quote: "Jika mata adalah cahaya, Maka hati adalah permata, Jika senyum adalah ibadah, Maka mengenalmu adalah anugerah",
       name: "Haru_Staff Server",
-      avatar: "https://media1.tenor.com/m/r-bKDCFZ_w4AAAAd/leon-kennedy-resident-evil-4.gif"
+      avatar: "https://cdn.discordapp.com/attachments/1333697196159143970/1376094619854573618/leon_senter.gif?ex=6834137b&is=6832c1fb&hm=cb7a3b3f0044772a7e918904075d112c69760c8edea943af2ad27b7c5e8fec3b&"
     },
     {
       quote: "If loving you is a sin, Then I'll gladly become a sinner. Jiee, My beloved",
