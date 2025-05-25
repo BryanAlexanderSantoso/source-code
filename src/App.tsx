@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -17,16 +18,24 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
-        <Navbar />
-        <Hero />
-        <About />
-        <Collaborations />
-        <Partnership />
-        <Events />
-        <CTA />
-        <Footer />
-      </div>
+      <AnimatePresence mode="wait">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200"
+        >
+          <Navbar />
+          <Hero />
+          <About />
+          <Collaborations />
+          <Partnership />
+          <Events />
+          <CTA />
+          <Footer />
+        </motion.div>
+      </AnimatePresence>
     </ThemeProvider>
   );
 }
