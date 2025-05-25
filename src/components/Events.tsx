@@ -50,13 +50,48 @@ const Events: React.FC = () => {
   const testimonials = [
     {
       quote: "Kami membangun komunitas yang positif dan suportif di sini. Sangat menyenangkan!",
-      name: "Near",
-      avatar: "https://images.pexels.com/photos/2726111/pexels-photo-2726111.jpeg?auto=compress&cs=tinysrgb&w=300"
+      name: "Near_Developer Website Server & Owner Server",
+      avatar: "https://cdn.discordapp.com/attachments/1363370386531680366/1363371117472911520/dea5ec4b58194cb4d7b4809440bde58d-removebg-preview.png?ex=6833458c&is=6831f40c&hm=c1d93a9f7dada09e99853bc19774b7006dac7d0cbfd58c9306d96e2dc5e44491&"
     },
     {
-      quote: "Kaze Serenity adalah tempat yang sempurna untuk bersantai dan bersenang-senang apalagi main game!.",
-      name: "ERr-Sama",
-      avatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300"
+      quote: "Kami membangun komunitas yang positif dan suportif di sini. Sangat menyenangkan!",
+      name: "Meepo_CO Owner Server",
+      avatar: ""
+    },
+    {
+      quote: "usahamu adalah hasilmu, ubah kelemahanmu menjadi kekuatanmu.",
+      name: "ERr_Staff Server",
+      avatar: "https://cdn.discordapp.com/attachments/1363370386531680366/1363406989434290226/AIEASE_2025-04-20-15-19-29-931.webp?ex=683366f5&is=68321575&hm=01f90e835455c5bac26f2d32909f2ae68e0c001815992b49e16da86a6de4b900&"
+    },
+    {
+      quote: "you don't have to search for love outside, because you already have it inside you",
+      name: "Bryan_Developer Website Server & Staff Server ",
+      avatar: ""
+    },
+    {
+      quote: "Kalau memang boleh mencintai, kenapa harus aku yang terjatuh terlalu dalam.",
+      name: "Ryrii_Staff Server",
+      avatar: "https://cdn.discordapp.com/attachments/1363370386531680366/1363379007546196128/IMG_20250420_120112.jpg?ex=68334ce5&is=6831fb65&hm=11126b9bf0c34a829e1a6f86c23668eb19d95b26b8b81ce6737ac29a99da1dfc&"
+    },
+    {
+      quote: "Aku nak es krim.",
+      name: "Alex Xian Kenzo_Staff Server",
+      avatar: "https://cdn.discordapp.com/attachments/1363370386531680366/1363384782939095050/file_00000000783462308be75288fd57e03b_conversation_id67ffab75-41bc-800a-b78f-c822bbb12323message_idca372601-aec0-43a7-b031-d134e4ce483d.png?ex=68335246&is=683200c6&hm=ed656e7beae09abc471ad55f6e61cb5f5cff6e678e0b2b2ec322e3748a1735fe&"
+    },
+    {
+      quote: "tidak ada yang mustahil jika kita mau berusaha.",
+      name: "Rae_Staff Server",
+      avatar: "https://cdn.discordapp.com/attachments/1363370386531680366/1363421100985290832/9137b8a95edb1f80fe44aac58c6b98c8.jpg?ex=68337419&is=68322299&hm=a18363e431dc1844976b2d2ba3c5d917a63fe651e98b75d980683742cb14f65e&"
+    },
+    {
+      quote: "jangan ragu untuk melangkah maju, ambil resikonya, nikmati prosesnya, dan nantikan hasilnyaa.",
+      name: "Tyaa-chan_Staff Server",
+      avatar: "https://cdn.discordapp.com/attachments/1363370386531680366/1363429379430154310/IMG_20250420_133704.png?ex=68337bcf&is=68322a4f&hm=1b1ae2836d19330b8e89547974e36ff5a798ef0a385feb4998732cff1424e43f&"
+    },
+    {
+      quote: "Jika mata adalah cahaya, Maka hati adalah permata, Jika senyum adalah ibadah, Maka mengenalmu adalah anugerah",
+      name: "Haru_Staff Server",
+      avatar: "https://cdn.discordapp.com/attachments/1363370386531680366/1363485728608092330/IMG-20250408-WA0031.jpg?ex=6833b04a&is=68325eca&hm=313ca4fb400231c1dbaa31117be4a79eb0cd986d28638e2b04c31fe9ad73bac1&"
     }
   ];
 
