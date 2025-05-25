@@ -56,7 +56,7 @@ const Events: React.FC = () => {
     {
       quote: "Kami membangun komunitas yang positif dan suportif di sini. Sangat menyenangkan!",
       name: "Meepo_CO Owner Server",
-      avatar: ""
+      avatar: "https://cdn.discordapp.com/avatars/1116236451244421182/a_dfdc8097dc86df4575558e8dc6ece2b6.gif?size=4096"
     },
     {
       quote: "usahamu adalah hasilmu, ubah kelemahanmu menjadi kekuatanmu.",
