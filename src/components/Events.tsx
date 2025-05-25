@@ -51,7 +51,7 @@ const Events: React.FC = () => {
     {
       quote: "Kami membangun komunitas yang positif dan suportif di sini. Sangat menyenangkan!",
       name: "Near_Developer Website Server & Owner Server",
-      avatar: "https://cdn.discordapp.com/attachments/1363370386531680366/1363371117472911520/dea5ec4b58194cb4d7b4809440bde58d-removebg-preview.png?ex=6833458c&is=6831f40c&hm=c1d93a9f7dada09e99853bc19774b7006dac7d0cbfd58c9306d96e2dc5e44491&"
+      avatar: "https://cdn.discordapp.com/avatars/1332216518393593868/ed687cb5b87ab462bb54ad5a10cb3c54.png?size=4096"
     },
     {
       quote: "Kami membangun komunitas yang positif dan suportif di sini. Sangat menyenangkan!",
