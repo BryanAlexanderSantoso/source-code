@@ -66,7 +66,7 @@ const Events: React.FC = () => {
     {
       quote: "you don't have to search for love outside, because you already have it inside you",
       name: "Bryan_Developer Website Server & Staff Server ",
-      avatar: ""
+      avatar: "https://cdn.discordapp.com/attachments/1363370386531680366/1376033189935579206/Jepretan_Layar_2025-05-25_pukul_10.04.03_AM.png?ex=6833da45&is=683288c5&hm=b1801ceab492e2d58a82a72e891d6b5a86ed06c3618ca9ed2905923c7de454ac&"
     },
     {
       quote: "Kalau memang boleh mencintai, kenapa harus aku yang terjatuh terlalu dalam.",
@@ -92,6 +92,11 @@ const Events: React.FC = () => {
       quote: "Jika mata adalah cahaya, Maka hati adalah permata, Jika senyum adalah ibadah, Maka mengenalmu adalah anugerah",
       name: "Haru_Staff Server",
       avatar: "https://cdn.discordapp.com/attachments/1363370386531680366/1363485728608092330/IMG-20250408-WA0031.jpg?ex=6833b04a&is=68325eca&hm=313ca4fb400231c1dbaa31117be4a79eb0cd986d28638e2b04c31fe9ad73bac1&"
+    },
+    {
+      quote: "If loving you is a sin, Then I'll gladly become a sinner.",
+      name: "Eumzaa_Staff Server",
+      avatar: "https://cdn.discordapp.com/attachments/1363370386531680366/1376033063393558641/1748140051896.jpg?ex=6833da27&is=683288a7&hm=493458a64a52fff78738f235db72d02c2dc26ce71b41dc281fc000716fadc076&"
     }
   ];
 
