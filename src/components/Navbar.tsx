@@ -6,7 +6,7 @@ import { useTheme } from '../context/ThemeContext';
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { isDark } = useTheme();
+  useTheme();
 
   useEffect(() => {
     const handleScroll = () => {

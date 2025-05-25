@@ -143,7 +143,7 @@ const Partnership: React.FC = () => {
 
         <div className="text-center">
           <a 
-            href="#" 
+            href="https://forms.gle/7Zhwg7WpSAEgP8xP7" 
             className="inline-block bg-indigo-600 text-white hover:bg-indigo-700 px-6 py-3 rounded-lg transition-colors duration-200"
           >
             Ajukan Permohonan Kerjasama
