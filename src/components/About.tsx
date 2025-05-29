@@ -135,7 +135,7 @@ const About: React.FC = () => {
             >
               <div className="w-24 h-24 rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center">
                 <img
-                  src="https://cdn.discordapp.com/attachments/1363370386531680366/1376056097617612820/Untitled_Project__28_-removebg-preview.png?ex=6833ef9b&is=68329e1b&hm=f073298b23b9db727b48747cdd1816f64198ce7d25420887f9451ca4aecd74de&"
+                  src="https://ik.imagekit.io/psdoxljjy/logo-removebg-preview.png?updatedAt=1748393788409"
                   alt="Kaze Serenity Logo"
                   className="h-12 w-12 text-white"
                 />

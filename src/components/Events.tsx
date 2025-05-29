@@ -79,52 +79,52 @@ const Events: React.FC = () => {
     {
       quote: "Cobalah untuk fokus terhadap mimpi mu sendiri. Nothing to lose, or nothing to be. (you're on your own).",
       name: "Near_Developer Website Server & Owner Server",
-      avatar: "https://tenor.com/view/teq-ultimate-gohan-teen-gohan-adult-gohan-dragon-ball-dragon-ball-z-gif-10877208784244583300.gif"
+      avatar: "https://i.pinimg.com/736x/c9/7d/42/c97d42039abeff996d311fea0e1f5d51.jpg"
     },
     {
-      quote: "Kami membangun komunitas yang positif dan suportif di sini. Sangat menyenangkan!",
+      quote: "She’ll probably never read this. But if she does—yes, it was always about you, shrimp buddy.",
       name: "Meepo_CO Owner Server",
       avatar: "https://cdn.discordapp.com/avatars/1116236451244421182/a_dfdc8097dc86df4575558e8dc6ece2b6.gif?size=4096"
     },
     {
       quote: "usahamu adalah hasilmu, ubah kelemahanmu menjadi kekuatanmu.",
       name: "ERr_Staff Server",
-      avatar: "https://cdn.discordapp.com/attachments/1363370386531680366/1363406989434290226/AIEASE_2025-04-20-15-19-29-931.webp?ex=683366f5&is=68321575&hm=01f90e835455c5bac26f2d32909f2ae68e0c001815992b49e16da86a6de4b900&"
+      avatar: "https://i.pinimg.com/736x/60/e2/86/60e286d92c17c2cff4fdb46e13c3e91e.jpg"
     },
     {
-      quote: "you don't have to search for love outside, because you already have it inside you",
+      quote: "愛される為に 愛すのは悲劇 Mencintai agar dicintai adalah sebuah tragedi - Michi Teyu Ku by Fujii Kaze", 
       name: "Bryan_Developer Website Server & Staff Server ",
       avatar: "https://media1.tenor.com/m/mDnIiloFauUAAAAd/fujii-kaze-matsuri.gif"
     },
     {
       quote: "Kalau memang boleh mencintai, kenapa harus aku yang terjatuh terlalu dalam.",
       name: "Ryrii_Staff Server",
-      avatar: "https://cdn.discordapp.com/attachments/1363370386531680366/1363379007546196128/IMG_20250420_120112.jpg?ex=68334ce5&is=6831fb65&hm=11126b9bf0c34a829e1a6f86c23668eb19d95b26b8b81ce6737ac29a99da1dfc&"
+      avatar: "https://i.pinimg.com/736x/64/7c/42/647c42329d09ad361df6daca81cb8281.jpg"
     },
     {
       quote: "Aku nak es krim.",
       name: "Alex Xian Kenzo_Staff Server",
-      avatar: "https://cdn.discordapp.com/attachments/1363370386531680366/1363384782939095050/file_00000000783462308be75288fd57e03b_conversation_id67ffab75-41bc-800a-b78f-c822bbb12323message_idca372601-aec0-43a7-b031-d134e4ce483d.png?ex=68335246&is=683200c6&hm=ed656e7beae09abc471ad55f6e61cb5f5cff6e678e0b2b2ec322e3748a1735fe&"
+      avatar: "https://i.pinimg.com/736x/51/d6/9b/51d69b890732548e1380d9eed86493b0.jpg"
     },
     {
       quote: "tidak ada yang mustahil jika kita mau berusaha.",
       name: "Rae_Staff Server",
-      avatar: "https://cdn.discordapp.com/attachments/1363370386531680366/1363421100985290832/9137b8a95edb1f80fe44aac58c6b98c8.jpg?ex=68337419&is=68322299&hm=a18363e431dc1844976b2d2ba3c5d917a63fe651e98b75d980683742cb14f65e&"
+      avatar: "https://i.pinimg.com/736x/69/d6/1f/69d61f474e388e7eccc92ec5017f572d.jpg"
     },
     {
       quote: "jangan ragu untuk melangkah maju, ambil resikonya, nikmati prosesnya, dan nantikan hasilnyaa.",
       name: "Tyaa-chan_Staff Server",
-      avatar: "https://cdn.discordapp.com/attachments/1363370386531680366/1363429379430154310/IMG_20250420_133704.png?ex=68337bcf&is=68322a4f&hm=1b1ae2836d19330b8e89547974e36ff5a798ef0a385feb4998732cff1424e43f&"
+      avatar: "https://i.pinimg.com/736x/02/b6/9f/02b69f8979be958a58d71521838814cb.jpg"
     },
     {
       quote: "Jika mata adalah cahaya, Maka hati adalah permata, Jika senyum adalah ibadah, Maka mengenalmu adalah anugerah",
       name: "Haru_Staff Server",
-      avatar: "https://cdn.discordapp.com/attachments/1333697196159143970/1376094619854573618/leon_senter.gif?ex=6834137b&is=6832c1fb&hm=cb7a3b3f0044772a7e918904075d112c69760c8edea943af2ad27b7c5e8fec3b&"
+      avatar: "https://i.pinimg.com/736x/68/ef/d0/68efd057db02e83a42e3fa7090a9ea12.jpg"
     },
     {
       quote: "If loving you is a sin, Then I'll gladly become a sinner. Jiee, My beloved",
       name: "Eumzaa_Staff Server",
-      avatar: "https://cdn.discordapp.com/attachments/1363370386531680366/1376033063393558641/1748140051896.jpg?ex=6833da27&is=683288a7&hm=493458a64a52fff78738f235db72d02c2dc26ce71b41dc281fc000716fadc076&"
+      avatar: "https://i.pinimg.com/736x/a6/f6/0a/a6f60a220f30782b4e40aba01189069e.jpg"
     }
   ];
 

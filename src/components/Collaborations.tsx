@@ -16,7 +16,7 @@ const Collaborations: React.FC = () => {
       image:
         "https://i.pinimg.com/736x/d0/d8/cb/d0d8cb80bdf6ddddec926e7eda3c4b9a.jpg",
       testimonial:
-        "Collaborating with Kaze Serenity was an incredible experience. The community is incredibly supportive and engaging!",
+        "Seru banget berkolaborasi dengan Kaze Serenity! Eventnya selalu menarik dan komunitasnya sangat suportif.",
       highlight: "Chill Podcast",
     },
     {
@@ -25,7 +25,7 @@ const Collaborations: React.FC = () => {
       image:
         "https://i.pinimg.com/736x/56/db/0d/56db0d4aef30da75f3cc7acb1f759d7d.jpg",
       testimonial:
-        "The Kaze Serenity community brings such positive energy to every collaboration. It's always a highlight of my month!",
+        "10/10 ga sih sekali event podcast ada giveawaynya!",
       highlight: "Chill Podcast",
     },
   ];
