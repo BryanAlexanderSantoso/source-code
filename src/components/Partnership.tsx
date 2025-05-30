@@ -130,34 +130,32 @@ const Partnership: React.FC = () => {
                 key={index}
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
-                className="relative bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-indigo-100 dark:border-indigo-900"
+                className="relative bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-indigo-100 dark:border-indigo-900 flex flex-col items-center text-center"
               >
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: index * 0.2 }}
-                  className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-indigo-500 rounded-full w-10 h-10 flex items-center justify-center text-white font-bold"
+                  className="flex items-center justify-center bg-indigo-500 text-white rounded-full w-10 h-10 font-bold mb-4"
                 >
                   {index + 1}
                 </motion.div>
-                <div className="pt-6">
-                  <motion.div
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: index * 0.3 }}
-                    className="flex justify-center mb-4"
-                  >
-                    <div className="p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-full">
-                      {step.icon}
-                    </div>
-                  </motion.div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 text-center">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-center">
-                    {step.description}
-                  </p>
-                </div>
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: index * 0.3 }}
+                  className="flex items-center justify-center mb-4"
+                >
+                  <div className="p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-full">
+                    {step.icon}
+                  </div>
+                </motion.div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  {step.description}
+                </p>
               </motion.div>
             ))}
           </motion.div>

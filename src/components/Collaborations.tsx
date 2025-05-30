@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Star } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -24,39 +24,29 @@ const Collaborations: React.FC = () => {
       role: "Streamer & Content Creator",
       image:
         "https://i.pinimg.com/736x/56/db/0d/56db0d4aef30da75f3cc7acb1f759d7d.jpg",
-      testimonial:
-        "10/10 ga sih sekali event podcast ada giveawaynya!",
+      testimonial: "10/10 ga sih sekali event podcast ada giveawaynya!",
       highlight: "Chill Podcast",
     },
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  const nextSlide = () => {
-    setActiveIndex((current) => (current + 1) % collaborations.length);
-  };
+  // Auto-slide every 5 seconds unless paused
+  useEffect(() => {
+    if (isPaused) return;
 
-  const prevSlide = () => {
-    setActiveIndex(
-      (current) => (current - 1 + collaborations.length) % collaborations.length
-    );
-  };
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % collaborations.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [collaborations.length, isPaused]);
 
   const slideVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0
-    }),
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1
-    },
-    exit: (direction: number) => ({
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0
-    })
+    enter: { opacity: 0 },
+    center: { opacity: 1 },
+    exit: { opacity: 0 },
   };
 
   return (
@@ -82,23 +72,24 @@ const Collaborations: React.FC = () => {
             className="h-1.5 bg-indigo-600 mx-auto mb-8 rounded-full"
           />
           <p className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-300">
-            Kami telah bermitra dengan beberapa pembuat konten paling menarik untuk menghadirkan pengalaman unik bagi komunitas kami.
+            Kami telah bermitra dengan beberapa pembuat konten paling menarik
+            untuk menghadirkan pengalaman unik bagi komunitas kami.
           </p>
         </motion.div>
 
-        <div className="relative">
-          <AnimatePresence initial={false} custom={activeIndex}>
+        <div
+          className="relative"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <AnimatePresence initial={false} mode="wait">
             <motion.div
               key={activeIndex}
-              custom={activeIndex}
               variants={slideVariants}
               initial="enter"
               animate="center"
               exit="exit"
-              transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 }
-              }}
+              transition={{ duration: 0.6 }}
               className="relative overflow-hidden rounded-2xl shadow-lg"
             >
               <div className="md:flex bg-white dark:bg-gray-800 rounded-2xl overflow-hidden">
@@ -116,7 +107,11 @@ const Collaborations: React.FC = () => {
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                     <motion.div
                       animate={{ rotate: [0, 360] }}
-                      transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
                       className="flex items-center"
                     >
                       <Star className="text-yellow-400 w-5 h-5 mr-1" />
@@ -151,42 +146,28 @@ const Collaborations: React.FC = () => {
             </motion.div>
           </AnimatePresence>
 
-          <div className="absolute top-1/2 transform -translate-y-1/2 left-0 right-0 flex justify-between px-4">
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={prevSlide}
-              className="bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700 text-indigo-600 dark:text-indigo-400 rounded-full p-2 shadow-md transition-all duration-200 focus:outline-none"
-              aria-label="Previous collaboration"
+          {/* Manual Navigation Buttons */}
+          <div className="flex justify-center gap-4 mt-6">
+            <button
+              onClick={() =>
+                setActiveIndex((prevIndex) =>
+                  prevIndex === 0
+                    ? collaborations.length - 1
+                    : prevIndex - 1
+                )
+              }
+              className="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-md transition"
             >
-              <ChevronLeft size={24} />
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={nextSlide}
-              className="bg-white/80 dark:bg-gray-800/80 hover:bg-white dark:hover:bg-gray-700 text-indigo-600 dark:text-indigo-400 rounded-full p-2 shadow-md transition-all duration-200 focus:outline-none"
-              aria-label="Next collaboration"
+              previous
+            </button>
+            <button
+              onClick={() =>
+                setActiveIndex((prevIndex) => (prevIndex + 1) % collaborations.length)
+              }
+              className="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-md transition"
             >
-              <ChevronRight size={24} />
-            </motion.button>
-          </div>
-
-          <div className="flex justify-center mt-6 space-x-2">
-            {collaborations.map((_, index) => (
-              <motion.button
-                key={index}
-                onClick={() => setActiveIndex(index)}
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.8 }}
-                className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                  index === activeIndex
-                    ? "bg-indigo-600 dark:bg-indigo-400 w-6"
-                    : "bg-indigo-300 dark:bg-indigo-700"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
+              next
+            </button>
           </div>
         </div>
 
