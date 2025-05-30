@@ -90,13 +90,27 @@ const Hero: React.FC = () => {
 
       {/* Scroll Indicator */}
       <motion.div
+        onClick={() => {
+          window.scrollTo({
+            top: window.innerHeight,
+            behavior: 'smooth',
+          });
+        }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1 }}
-        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce z-10"
+        className="cursor-pointer absolute bottom-6 left-0 right-0 flex justify-center z-10"
       >
-        <div className="w-8 h-12 rounded-full border-2 border-white/50 flex justify-center pt-2">
-          <div className="w-1 h-3 bg-white/50 rounded-full animate-scroll-down"></div>
+        <div className="w-8 h-14 rounded-full border-2 border-white/50 flex justify-center items-start pt-2">
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="w-2 h-4 bg-white/70 rounded-full"
+          />
         </div>
       </motion.div>
     </div>
