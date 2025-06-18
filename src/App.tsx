@@ -7,6 +7,7 @@ import Collaborations from './components/Collaborations';
 import Partnership from './components/Partnership';
 import Events from './components/Events';
 import TopVoice from './components/TopVoice';
+import StaffRecruitment from './components/StaffRecruitment';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import { ThemeProvider } from './context/ThemeContext';
@@ -34,6 +35,7 @@ function App() {
           <Partnership />
           <Events />
           <TopVoice />
+          <StaffRecruitment />
           <CTA />
           <Footer />
         </motion.div>
